@@ -4,8 +4,8 @@ export const siteConfig = {
   description:
     "Phakamani is an African human-performance company helping individuals, organisations and communities become more capable, elevate performance and live fully.",
   email: "hello@phakamani.co.za",
-  phone: "+27 (0) 21 000 0000",
-  location: "Cape Town, South Africa",
+  phone: "082 390 3419",
+  location: "Johannesburg, South Africa",
   social: [
     { label: "Instagram", href: "https://instagram.com" },
     { label: "LinkedIn", href: "https://linkedin.com" },
@@ -170,6 +170,8 @@ export const categoryRail = [
   { label: "Live", href: "/#live" },
   { label: "Youth", href: "/#youth" },
   { label: "Stories", href: "/#media" },
+  { label: "Events", href: "/#events" },
+  { label: "Team", href: "/#team" },
   { label: "Sport", href: "/activities#sport" },
   { label: "Entertainment", href: "/activities#entertainment" },
   { label: "Schools", href: "/activities#schools" },
@@ -178,6 +180,62 @@ export const categoryRail = [
 /* --------------------------------------------------------------------------
    Content
    -------------------------------------------------------------------------- */
+
+/* --------------------------------------------------------------------------
+   Upcoming events
+   One per arena. A null `date` renders as "Date to be announced" rather than
+   inventing one — fill in day/month/year and venue as each is confirmed, and
+   the card switches to the dated layout automatically.
+   -------------------------------------------------------------------------- */
+
+export type EventDate = { day: string; month: string; year: string };
+
+export type PhakamaniEvent = {
+  id: string;
+  category: "Sport" | "Entertainment" | "Schools";
+  title: string;
+  description: string;
+  image: string;
+  date: EventDate | null;
+  location: string;
+  href: string;
+};
+
+export const events: readonly PhakamaniEvent[] = [
+  {
+    id: "endurance-weekend",
+    category: "Sport",
+    image: "/photos/medal-moment.webp",
+    title: "Endurance Race Weekend",
+    description:
+      "A full weekend built around a start line — race preparation, the event itself, and the recovery session that turns one finish into a habit.",
+    date: null,
+    location: "Venue to be confirmed",
+    href: "/activities#sport",
+  },
+  {
+    id: "be-more-live",
+    category: "Entertainment",
+    image: "/photos/team.webp",
+    title: "Be More. Live",
+    description:
+      "An evening on stage: real transformation stories told by the people who lived them, with a challenge zone open before and after.",
+    date: null,
+    location: "Venue to be confirmed",
+    href: "/activities#entertainment",
+  },
+  {
+    id: "inter-school-challenge",
+    category: "Schools",
+    image: "/photos/school-assembly.webp",
+    title: "Inter-School Challenge",
+    description:
+      "Teams from across the province in sport and problem-solving events — designed so every learner gets a start line, not just the first team.",
+    date: null,
+    location: "Venue to be confirmed",
+    href: "/activities#schools",
+  },
+];
 
 export const journeyStages = [
   {
@@ -467,14 +525,10 @@ export const faqs = [
   },
 ] as const;
 
-// Placeholder tiles until real partner names/logos are supplied.
-export const partnerPlaceholders = [
-  "Partner 01",
-  "Partner 02",
-  "Partner 03",
-  "Partner 04",
-  "Partner 05",
-  "Partner 06",
-  "Partner 07",
-  "Partner 08",
+export const partners = [
+  { name: "Barloworld", logo: "/partners/barloworld.webp" },
+  { name: "Rand Water", logo: "/partners/rand-water.webp" },
+  { name: "Transnet", logo: "/partners/transnet.webp" },
+  { name: "Momentum Health", logo: "/partners/momentum-health.webp" },
+  { name: "IRONMAN", logo: "/partners/ironman.webp" },
 ] as const;

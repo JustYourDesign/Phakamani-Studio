@@ -1,9 +1,24 @@
-import { LogoMarquee, type LogoMarqueeItem } from "@/components/ui/logo-marquee";
-import { partnerPlaceholders } from "@/lib/site";
+import Image from "next/image";
 
-const items: LogoMarqueeItem[] = partnerPlaceholders.map((name, index) => ({
-  id: `partner-${index}`,
-  label: name,
+import { LogoMarquee, type LogoMarqueeItem } from "@/components/ui/logo-marquee";
+import { partners } from "@/lib/site";
+
+// The marks are pre-normalised to a common 260x88 box on the marquee's own
+// mist fill, so no logo reads as a pale rectangle sitting on the strip.
+// Desaturated by default to stop five competing brand palettes fighting the
+// mint accent; colour returns on hover, which also pauses the scroll.
+const items: LogoMarqueeItem[] = partners.map((partner) => ({
+  id: partner.name,
+  label: partner.name,
+  mark: (
+    <Image
+      src={partner.logo}
+      alt=""
+      width={260}
+      height={88}
+      className="h-11 w-auto object-contain opacity-70 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
+    />
+  ),
 }));
 
 export function Partners() {
@@ -16,10 +31,6 @@ export function Partners() {
         <div className="mt-10">
           <LogoMarquee items={items} label="Partner organisations" />
         </div>
-
-        <p className="mt-5 text-small text-ash">
-          Placeholder tiles — swap in real partner names and logos when available.
-        </p>
       </div>
     </section>
   );

@@ -2,7 +2,9 @@ import { Hero } from "@/components/sections/hero";
 import { BeMoreTicker } from "@/components/sections/be-more-ticker";
 import { Journey } from "@/components/sections/journey";
 import { ActivitiesShowcase } from "@/components/sections/activities-showcase";
+import { Events } from "@/components/sections/events";
 import { Philosophy } from "@/components/sections/philosophy";
+import { Team } from "@/components/sections/team";
 import { Territories } from "@/components/sections/territories";
 import { MediaStories } from "@/components/sections/media-stories";
 import { WellnessBand } from "@/components/sections/wellness-band";
@@ -21,7 +23,9 @@ export default function Home() {
       <BeMoreTicker />
       <Journey />
       <ActivitiesShowcase />
+      <Events />
       <Philosophy />
+      <Team />
       <Territories />
       <MediaStories />
       <WellnessBand />

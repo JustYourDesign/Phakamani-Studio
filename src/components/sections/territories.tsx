@@ -94,7 +94,7 @@ function TerritoryCard({ territory }: { territory: (typeof territories)[number] 
 
 export function Territories() {
   return (
-    <section id="territories" className="bg-paper pb-24 lg:pb-32">
+    <section id="territories" className="bg-paper py-24 lg:py-32">
       <div className="mx-auto max-w-[1200px] px-6">
         <p className="label text-primary">Content Territories</p>
         <h2 className="mt-5 max-w-3xl text-title font-semibold">

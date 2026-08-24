@@ -1,6 +1,7 @@
 import {
   activities,
   audiences,
+  events,
   faqs,
   journeyStages,
   primaryNav,
@@ -75,6 +76,15 @@ function buildIndex(): SearchDoc[] {
       href: "/#media",
       category: "Media",
       keywords: "youtube podcast documentary film stories content",
+    },
+    {
+      id: "section-team",
+      title: "The Team",
+      description:
+        "Coaches, psychologists, facilitators and film-makers who deliver every Phakamani programme.",
+      href: "/#team",
+      category: "About",
+      keywords: "people staff who we are crew",
     },
     {
       id: "section-impact",
@@ -164,6 +174,21 @@ function buildIndex(): SearchDoc[] {
       href: "/services#audiences",
       category: "Who We Work With",
       keywords: audience.bullets.join(" "),
+    });
+  }
+
+  for (const event of events) {
+    const when = event.date
+      ? `${event.date.day} ${event.date.month} ${event.date.year}`
+      : "date to be announced";
+
+    docs.push({
+      id: `event-${event.id}`,
+      title: event.title,
+      description: `${event.category} · ${when}`,
+      href: "/#events",
+      category: "Events",
+      keywords: event.description + " upcoming diary calendar",
     });
   }
 

@@ -10,8 +10,11 @@ import { cn } from "@/lib/utils";
 import { beMoreWords } from "@/lib/site";
 
 const heroVideo = {
-  src: "/video/hero-runner.mp4",
-  description: "A runner moving across an open hillside at dawn.",
+  src: "/video/hero-athlete.mp4",
+  // Painted immediately while the 3.8MB video streams in, and shown as-is to
+  // anyone who has asked their device to reduce motion.
+  poster: "/video/hero-athlete-poster.webp",
+  description: "An athlete training, filmed in slow motion.",
 };
 
 const REDUCED_MOTION = "(prefers-reduced-motion: reduce)";
@@ -41,8 +44,7 @@ export function Hero() {
 
   // Playback is driven here rather than via the `autoPlay` attribute so the
   // motion preference is respected on the first paint and honoured live if it
-  // changes. Paused, the element holds its first frame — that's the poster,
-  // which is why no separate poster image is shipped.
+  // changes. Left paused, the element simply shows its poster.
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
@@ -75,6 +77,7 @@ export function Hero() {
         ref={videoRef}
         className="absolute inset-0 size-full object-cover brightness-[0.5] saturate-[0.8] contrast-[1.05]"
         src={heroVideo.src}
+        poster={heroVideo.poster}
         muted
         loop
         playsInline
@@ -97,7 +100,7 @@ export function Hero() {
       {/* Explicit stops rather than from/via/to. On small screens the copy
           runs the full width, so the scrim is a flat vertical wash; from lg
           the copy column ends at ~46%, so the ramp stays near-opaque that far
-          and then opens up to let the runner read on the right. */}
+          and then opens up to let the athlete read on the right. */}
       <div
         aria-hidden
         className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.55)_0%,rgba(0,0,0,0.7)_60%,rgba(0,0,0,0.8)_100%)] lg:bg-[linear-gradient(90deg,#000_0%,rgba(0,0,0,0.95)_40%,rgba(0,0,0,0.8)_55%,rgba(0,0,0,0.4)_78%,rgba(0,0,0,0.2)_100%)]"
