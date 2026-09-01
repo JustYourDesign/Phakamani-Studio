@@ -1,0 +1,238 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ==========================================================================
+   PHAKAMANI DESIGN SYSTEM
+   Structure derived from the WHOOP performance system: full-bleed black/white
+   alternation, oversized display type with aggressive negative tracking,
+   pill buttons, flat colour elevation (no shadows), one accent.
+   Accent + warm surfaces come from the Phakamani logo and mood board.
+   ========================================================================== */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-sans);
+  --font-baron: var(--font-baron);
+  --font-logo: var(--font-logo);
+
+  /* Core surfaces */
+  --color-obsidian: var(--obsidian);
+  --color-carbon: var(--carbon);
+  --color-paper: var(--paper);
+  --color-mist: var(--mist);
+  --color-hairline: var(--hairline);
+  --color-fog: var(--fog);
+  --color-ash: var(--ash);
+
+  /* Phakamani brand */
+  --color-mint: var(--mint);
+  --color-emerald: var(--emerald);
+  --color-forest: var(--forest);
+  --color-cream: var(--cream);
+  --color-sage: var(--sage);
+
+  /* shadcn bridge */
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* WHOOP radius rules: pills are non-negotiable, cards are 24px */
+  --radius-pill: 300px;
+  --radius-card: 24px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 30px;
+
+  /* Type scale — minor third from an 19px body, tracked tight at the top */
+  --text-display: clamp(3.25rem, 10.5vw, 7.5rem);
+  --text-display--line-height: 0.82;
+  --text-display--letter-spacing: -0.04em;
+
+  --text-hero: clamp(2.75rem, 6.5vw, 4.5rem);
+  --text-hero--line-height: 0.86;
+  --text-hero--letter-spacing: -0.035em;
+
+  --text-title: clamp(2rem, 3.6vw, 3.125rem);
+  --text-title--line-height: 0.92;
+  --text-title--letter-spacing: -0.03em;
+
+  --text-heading: 2.1875rem;
+  --text-heading--line-height: 1;
+  --text-heading--letter-spacing: -0.03em;
+
+  --text-subheading: 1.5rem;
+  --text-subheading--line-height: 1.13;
+  --text-subheading--letter-spacing: -0.03em;
+
+  --text-lead: 1.25rem;
+  --text-lead--line-height: 1.35;
+  --text-lead--letter-spacing: -0.03em;
+
+  --text-body: 1.1875rem;
+  --text-body--line-height: 1.45;
+  --text-body--letter-spacing: -0.02em;
+
+  --text-small: 1rem;
+  --text-small--line-height: 1.5;
+  --text-small--letter-spacing: -0.01em;
+
+  --text-label: 0.8125rem;
+  --text-label--line-height: 1.4;
+  --text-label--letter-spacing: 0.14em;
+}
+
+:root {
+  /* Surfaces */
+  --obsidian: #000000;
+  --carbon: #121212;
+  --paper: #ffffff;
+  --mist: #f2f4f1; /* flat elevation fill — the only "raised" surface */
+  --hairline: #e4e7e1;
+  --fog: #7a7a7a;
+  --ash: #9a9a9a;
+
+  /* Phakamani accent — the logo's mint dot and its deeper working weight */
+  --mint: #4fd1a5; /* bright accent, dark backgrounds only */
+  --emerald: #0b7a57; /* accessible accent for light backgrounds */
+  --forest: #0a3b2e; /* deep brand green, warm dark sections */
+  --cream: #edeae1; /* mood-board warmth, used sparingly */
+  --sage: #80866e;
+
+  --background: var(--paper);
+  --foreground: var(--obsidian);
+
+  --card: var(--mist);
+  --card-foreground: var(--obsidian);
+  --popover: var(--paper);
+  --popover-foreground: var(--obsidian);
+
+  --primary: var(--emerald);
+  --primary-foreground: #ffffff;
+  --secondary: var(--mist);
+  --secondary-foreground: var(--obsidian);
+  --muted: var(--mist);
+  --muted-foreground: var(--fog);
+  --accent: var(--mist);
+  --accent-foreground: var(--obsidian);
+  --destructive: oklch(0.577 0.245 27.325);
+
+  --border: var(--hairline);
+  --input: var(--hairline);
+  --ring: var(--emerald);
+
+  --radius: 24px;
+}
+
+/* Dark sections opt in per-band rather than per-document, matching the
+   full-bleed alternation pattern. `.on-dark` remaps the bridge tokens so
+   shadcn primitives (buttons, inputs, accordions) invert correctly. */
+.on-dark {
+  --background: var(--obsidian);
+  --foreground: #ffffff;
+  --card: #161616;
+  --card-foreground: #ffffff;
+  --popover: var(--carbon);
+  --popover-foreground: #ffffff;
+  --primary: var(--mint);
+  --primary-foreground: var(--obsidian);
+  --secondary: #1c1c1c;
+  --secondary-foreground: #ffffff;
+  --muted: #1c1c1c;
+  --muted-foreground: var(--ash);
+  --accent: #1c1c1c;
+  --accent-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.14);
+  --input: rgba(255, 255, 255, 0.18);
+  --ring: var(--mint);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans scroll-smooth;
+    /* the header is sticky — keep anchor targets clear of it.
+       4rem bar on small screens; 4.5rem bar + 2.75rem rail from lg. */
+    scroll-padding-top: 5rem;
+    @variant lg {
+      scroll-padding-top: 8rem;
+    }
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-size: 19px;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: var(--mint);
+    color: var(--obsidian);
+  }
+}
+
+/* Uppercase micro-label used for eyebrows and button text throughout */
+@utility label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+/* Content well — WHOOP holds body copy to a narrow measure and never centres it */
+@utility measure {
+  max-width: 34rem;
+}
+
+/* Horizontal rails (nav categories, card carousels) hide their scrollbar */
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility animate-marquee {
+  animation: marquee-x 38s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}
