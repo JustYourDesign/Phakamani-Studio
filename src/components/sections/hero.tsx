@@ -71,11 +71,11 @@ export function Hero() {
     // would push the CTA below the fold. Subtract the bar (4rem) and, from lg,
     // the category rail as well (7.25rem total).
     <section className="on-dark relative flex min-h-[calc(100svh-4rem)] flex-col justify-end overflow-hidden bg-obsidian text-white lg:min-h-[calc(100svh-7.25rem)]">
-      {/* Graded down at source so the footage reads as a dark backdrop rather
-          than a photo the type has to fight. */}
+      {/* The clip is already dark and studio-lit, so it needs lifting rather
+          than crushing — graded for legibility, not for mood it already has. */}
       <video
         ref={videoRef}
-        className="absolute inset-0 size-full object-cover brightness-[0.5] saturate-[0.8] contrast-[1.05]"
+        className="absolute inset-0 size-full object-cover brightness-[0.85] saturate-[0.85] contrast-[1.05]"
         src={heroVideo.src}
         poster={heroVideo.poster}
         muted
@@ -95,7 +95,7 @@ export function Hero() {
           3. bottom — catches the CTA row and hands off to the next band. */}
       <div
         aria-hidden
-        className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black via-black/65 to-transparent"
+        className="absolute inset-x-0 top-0 h-48 bg-[linear-gradient(180deg,#000_0%,rgba(0,0,0,0.55)_60%,transparent_100%)]"
       />
       {/* Explicit stops rather than from/via/to. On small screens the copy
           runs the full width, so the scrim is a flat vertical wash; from lg
@@ -103,7 +103,7 @@ export function Hero() {
           and then opens up to let the athlete read on the right. */}
       <div
         aria-hidden
-        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.55)_0%,rgba(0,0,0,0.7)_60%,rgba(0,0,0,0.8)_100%)] lg:bg-[linear-gradient(90deg,#000_0%,rgba(0,0,0,0.95)_40%,rgba(0,0,0,0.8)_55%,rgba(0,0,0,0.4)_78%,rgba(0,0,0,0.2)_100%)]"
+        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.4)_0%,rgba(0,0,0,0.55)_60%,rgba(0,0,0,0.68)_100%)] lg:bg-[linear-gradient(90deg,#000_0%,rgba(0,0,0,0.9)_32%,rgba(0,0,0,0.68)_52%,rgba(0,0,0,0.3)_78%,rgba(0,0,0,0.12)_100%)]"
       />
       <div
         aria-hidden
@@ -113,7 +113,7 @@ export function Hero() {
       {/* Content is bottom-aligned, so on short viewports the padding is what
           pushes the CTA under the fold — trim it rather than the copy. */}
       <div className="relative z-10 mx-auto w-full max-w-[1600px] px-[8%] pb-20 pt-32 lg:pb-28 [@media(max-height:820px)]:pb-14 [@media(max-height:820px)]:pt-16">
-        <p className="label text-mint">African Human Performance Company</p>
+        <p className="label text-mint">Human Performance Company</p>
 
         <BeMore as="h1" className="mt-6 text-display text-white" />
 

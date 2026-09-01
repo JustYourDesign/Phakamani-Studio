@@ -83,30 +83,30 @@ export const territoryImages = {
 } as const;
 
 export const activityImages = {
-  sport: {
+  wellness: {
     src: "/photos/trail-race-recovery.webp",
     alt: "A runner catching her breath during a cross-country race",
   },
-  entertainment: {
+  culture: {
     src: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1200&q=80",
     alt: "A crowd with arms raised in front of a lit stage",
   },
-  schools: {
+  communities: {
     src: "/photos/school-lineup.webp",
     alt: "Learners in green blazers gathered outside classroom blocks at a Phakamani school session",
   },
 } as const;
 
 export const activityHeroImages = {
-  sport: {
+  wellness: {
     src: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1600&q=80",
     alt: "An athlete mid-stride during a football match",
   },
-  entertainment: {
+  culture: {
     src: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1600&q=80",
     alt: "A speaker on a lit stage in front of a large audience",
   },
-  schools: {
+  communities: {
     src: "/photos/school-assembly.webp",
     alt: "Learners standing in assembly lines between classroom blocks, hills rising behind",
   },

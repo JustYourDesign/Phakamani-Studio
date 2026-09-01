@@ -30,7 +30,7 @@ const logo = Quicksand({
 export const metadata: Metadata = {
   title: "Phakamani — Be More.",
   description:
-    "Phakamani is an African human-performance company helping individuals, organisations and communities become more capable, elevate performance and live fully.",
+    "Phakamani is a human-performance company helping individuals, organisations and communities become more capable, elevate performance and live fully.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

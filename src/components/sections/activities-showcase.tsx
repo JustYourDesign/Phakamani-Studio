@@ -19,11 +19,11 @@ export function ActivitiesShowcase() {
           <div>
             <p className="label text-mint">Where We Show Up</p>
             <h2 className="mt-5 max-w-2xl text-title font-semibold">
-              Sport. Entertainment. Schools.
+              Wellness. Communities. Culture.
             </h2>
             <p className="measure mt-6 text-body text-white/60">
-              Human performance is not a single arena. It looks like a start
-              line, a stage and a classroom — and we build for all three.
+              Human performance is not a single arena. It looks like a workplace,
+              a community and a stage — and we build for all three.
             </p>
           </div>
           <Link

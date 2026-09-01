@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Phakamani",
   tagline: "BE MORE.",
   description:
-    "Phakamani is an African human-performance company helping individuals, organisations and communities become more capable, elevate performance and live fully.",
+    "Phakamani is a human-performance company helping individuals, organisations and communities become more capable, elevate performance and live fully.",
   email: "hello@phakamani.co.za",
   phone: "082 390 3419",
   location: "Johannesburg, South Africa",
@@ -35,45 +35,45 @@ export const primaryNav: readonly NavItem[] = [
     href: "/activities",
     groups: [
       {
-        title: "Sport",
+        title: "Wellness",
         links: [
-          { label: "Endurance & Racing", href: "/activities#sport" },
-          { label: "Team Performance Camps", href: "/activities#sport" },
-          { label: "Athlete Coaching", href: "/activities#sport" },
-          { label: "Adventure & Expeditions", href: "/activities#sport" },
+          { label: "Endurance & Racing", href: "/activities#wellness" },
+          { label: "Team Performance Camps", href: "/activities#wellness" },
+          { label: "Athlete Coaching", href: "/activities#wellness" },
+          { label: "Adventure & Expeditions", href: "/activities#wellness" },
         ],
       },
       {
-        title: "Entertainment",
+        title: "Communities",
         links: [
-          { label: "Live Events & Stages", href: "/activities#entertainment" },
-          { label: "Festivals & Activations", href: "/activities#entertainment" },
-          { label: "Speaking & Keynotes", href: "/activities#entertainment" },
-          { label: "Retreats & Experiences", href: "/activities#entertainment" },
+          { label: "Student Resilience", href: "/activities#communities" },
+          { label: "Inter-School Challenges", href: "/activities#communities" },
+          { label: "Sports Academies", href: "/activities#communities" },
+          { label: "Educator Support", href: "/activities#communities" },
         ],
       },
       {
-        title: "Schools",
+        title: "Culture",
         links: [
-          { label: "Student Resilience", href: "/activities#schools" },
-          { label: "Inter-School Challenges", href: "/activities#schools" },
-          { label: "Sports Academies", href: "/activities#schools" },
-          { label: "Educator Support", href: "/activities#schools" },
+          { label: "Live Events & Stages", href: "/activities#culture" },
+          { label: "Festivals & Activations", href: "/activities#culture" },
+          { label: "Speaking & Keynotes", href: "/activities#culture" },
+          { label: "Retreats & Experiences", href: "/activities#culture" },
         ],
       },
     ],
     featured: [
       {
-        kicker: "Sport",
+        kicker: "Wellness",
         title: "Where the limit gets questioned",
-        href: "/activities#sport",
+        href: "/activities#wellness",
         image:
           "https://images.unsplash.com/photo-1601670463842-210f77e864e0?auto=format&fit=crop&w=700&q=80",
       },
       {
-        kicker: "Schools",
+        kicker: "Communities",
         title: "Confidence, built early",
-        href: "/activities#schools",
+        href: "/activities#communities",
         image:
           "https://images.unsplash.com/photo-1758270704286-83476deb3bd1?auto=format&fit=crop&w=700&q=80",
       },
@@ -172,9 +172,9 @@ export const categoryRail = [
   { label: "Stories", href: "/#media" },
   { label: "Events", href: "/#events" },
   { label: "Team", href: "/#team" },
-  { label: "Sport", href: "/activities#sport" },
-  { label: "Entertainment", href: "/activities#entertainment" },
-  { label: "Schools", href: "/activities#schools" },
+  { label: "Wellness", href: "/activities#wellness" },
+  { label: "Communities", href: "/activities#communities" },
+  { label: "Culture", href: "/activities#culture" },
 ] as const;
 
 /* --------------------------------------------------------------------------
@@ -192,7 +192,7 @@ export type EventDate = { day: string; month: string; year: string };
 
 export type PhakamaniEvent = {
   id: string;
-  category: "Sport" | "Entertainment" | "Schools";
+  category: "Wellness" | "Communities" | "Culture";
   title: string;
   description: string;
   image: string;
@@ -204,36 +204,36 @@ export type PhakamaniEvent = {
 export const events: readonly PhakamaniEvent[] = [
   {
     id: "endurance-weekend",
-    category: "Sport",
+    category: "Wellness",
     image: "/photos/medal-moment.webp",
     title: "Endurance Race Weekend",
     description:
       "A full weekend built around a start line — race preparation, the event itself, and the recovery session that turns one finish into a habit.",
     date: null,
     location: "Venue to be confirmed",
-    href: "/activities#sport",
-  },
-  {
-    id: "be-more-live",
-    category: "Entertainment",
-    image: "/photos/team.webp",
-    title: "Be More. Live",
-    description:
-      "An evening on stage: real transformation stories told by the people who lived them, with a challenge zone open before and after.",
-    date: null,
-    location: "Venue to be confirmed",
-    href: "/activities#entertainment",
+    href: "/activities#wellness",
   },
   {
     id: "inter-school-challenge",
-    category: "Schools",
+    category: "Communities",
     image: "/photos/school-assembly.webp",
     title: "Inter-School Challenge",
     description:
       "Teams from across the province in sport and problem-solving events — designed so every learner gets a start line, not just the first team.",
     date: null,
     location: "Venue to be confirmed",
-    href: "/activities#schools",
+    href: "/activities#communities",
+  },
+  {
+    id: "be-more-live",
+    category: "Culture",
+    image: "/photos/team.webp",
+    title: "Be More. Live",
+    description:
+      "An evening on stage: real transformation stories told by the people who lived them, with a challenge zone open before and after.",
+    date: null,
+    location: "Venue to be confirmed",
+    href: "/activities#culture",
   },
 ];
 
@@ -266,10 +266,10 @@ export const journeyStages = [
 
 export const activities = [
   {
-    id: "sport",
-    kicker: "01 — Sport",
-    title: "Sport",
-    lede: "Where the limit gets questioned first.",
+    id: "wellness",
+    kicker: "01 — Wellness",
+    title: "Wellness",
+    lede: "It starts with how people are actually doing.",
     description:
       "Endurance, team sport and adventure are where Phakamani's philosophy was forged. Completing an Ironman proved that perceived limits are not always actual limits — and that discovery is what every sporting programme we run is built to recreate.",
     items: [
@@ -296,39 +296,9 @@ export const activities = [
     ],
   },
   {
-    id: "entertainment",
-    kicker: "02 — Entertainment",
-    title: "Entertainment",
-    lede: "Performance, staged for a crowd.",
-    description:
-      "Human performance is worth watching. We build live experiences, festival activations and stage moments that carry the Be More. idea to audiences — energetic, well-produced and unmistakably African.",
-    items: [
-      {
-        title: "Live Events & Stages",
-        description:
-          "Conference stages, awards and brand events where the keynote is an experience rather than a slide deck.",
-      },
-      {
-        title: "Festivals & Activations",
-        description:
-          "Physical challenge zones, recovery lounges and participation formats that turn a crowd into participants.",
-      },
-      {
-        title: "Speaking & Keynotes",
-        description:
-          "Talks on resilience, endurance and human potential — built on real stories, not motivational filler.",
-      },
-      {
-        title: "Retreats & Experiences",
-        description:
-          "Immersive multi-day experiences combining movement, recovery, learning and genuine downtime.",
-      },
-    ],
-  },
-  {
-    id: "schools",
-    kicker: "03 — Schools",
-    title: "Schools",
+    id: "communities",
+    kicker: "02 — Communities",
+    title: "Communities",
     lede: "The earlier the discovery, the further it travels.",
     description:
       "A learner who finds out at fifteen that there is more in them carries that for decades. We work with schools and academic institutions on confidence, resilience and leadership — before life's pressures set the ceiling.",
@@ -352,6 +322,36 @@ export const activities = [
         title: "Educator Support",
         description:
           "Workshops for teachers and coaches — because staff wellbeing is the quiet foundation of a school's performance.",
+      },
+    ],
+  },
+  {
+    id: "culture",
+    kicker: "03 — Culture",
+    title: "Culture",
+    lede: "Performance, staged for a crowd.",
+    description:
+      "Human performance is worth watching. We build live experiences, festival activations and stage moments that carry the Be More. idea to audiences — energetic, well-produced and unmistakably African.",
+    items: [
+      {
+        title: "Live Events & Stages",
+        description:
+          "Conference stages, awards and brand events where the keynote is an experience rather than a slide deck.",
+      },
+      {
+        title: "Festivals & Activations",
+        description:
+          "Physical challenge zones, recovery lounges and participation formats that turn a crowd into participants.",
+      },
+      {
+        title: "Speaking & Keynotes",
+        description:
+          "Talks on resilience, endurance and human potential — built on real stories, not motivational filler.",
+      },
+      {
+        title: "Retreats & Experiences",
+        description:
+          "Immersive multi-day experiences combining movement, recovery, learning and genuine downtime.",
       },
     ],
   },

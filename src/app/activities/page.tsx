@@ -11,7 +11,7 @@ import { activityHeroImages, activityImages } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Activities — Phakamani",
   description:
-    "Sport, entertainment and schools — the three arenas where Phakamani builds human performance.",
+    "Wellness, communities and culture — the three arenas where Phakamani builds human performance.",
 };
 
 export default function ActivitiesPage() {
@@ -20,7 +20,7 @@ export default function ActivitiesPage() {
       {/* ---- Black hero ---- */}
       <section className="on-dark relative overflow-hidden bg-obsidian text-white">
         <Image
-          src={activityHeroImages.sport.src}
+          src={activityHeroImages.wellness.src}
           alt=""
           fill
           priority
@@ -32,12 +32,13 @@ export default function ActivitiesPage() {
         <div className="relative z-10 mx-auto max-w-[1200px] px-6 pb-20 pt-28 lg:pb-28 lg:pt-36">
           <p className="label text-mint">Activities</p>
           <h1 className="mt-6 max-w-4xl text-hero font-semibold">
-            A start line. A stage. A classroom.
+            A workplace. A community. A stage.
           </h1>
           <p className="measure mt-7 text-body text-white/65">
-            Sport is one expression of human performance — not the only one. We
-            work across three arenas, and the underlying experience is the same
-            in each: the discovery that there is more in you.
+            Wellness is where it starts, but human performance never stops at the
+            individual. We work across three arenas, and the underlying
+            experience is the same in each: the discovery that there is more in
+            you.
           </p>
 
           <nav className="mt-10 flex flex-wrap gap-3" aria-label="Activity categories">
@@ -140,9 +141,9 @@ export default function ActivitiesPage() {
       })}
 
       <CtaBand
-        eyebrow="Sport. Entertainment. Schools."
+        eyebrow="Wellness. Communities. Culture."
         heading="Which arena is yours?"
-        description="Tell us who you're working with — a squad, an audience or a school — and we'll shape the right programme."
+        description="Tell us who you're working with — a workforce, a community or an audience — and we'll shape the right programme."
         ctaLabel="Start the Conversation"
       />
     </>

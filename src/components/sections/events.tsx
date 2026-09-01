@@ -22,7 +22,7 @@ export function Events() {
               One start line in every arena.
             </h2>
             <p className="measure mt-6 text-body text-fog">
-              Sport, entertainment and schools each have something on the way.
+              Wellness, communities and culture each have something on the way.
               Dates are announced here first.
             </p>
           </div>

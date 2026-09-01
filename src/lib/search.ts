@@ -31,7 +31,7 @@ function buildIndex(): SearchDoc[] {
       id: "page-home",
       title: "Home",
       description:
-        "Be More. An African human-performance company helping people, organisations and communities become more capable.",
+        "Be More. A human-performance company helping people, organisations and communities become more capable.",
       href: "/",
       category: "Page",
       keywords: "be more phakamani rise up",
@@ -39,7 +39,7 @@ function buildIndex(): SearchDoc[] {
     {
       id: "page-activities",
       title: "Activities",
-      description: "Sport, entertainment and schools — the three arenas we build for.",
+      description: "Wellness, communities and culture — the three arenas we build for.",
       href: "/activities",
       category: "Page",
     },
@@ -282,7 +282,7 @@ export function search(query: string, limit = 8): SearchDoc[] {
 
 /** Shown before the user types anything. */
 export const suggestedSearches = [
-  "Schools",
+  "Communities",
   "Endurance",
   "Leadership",
   "Resilience",
